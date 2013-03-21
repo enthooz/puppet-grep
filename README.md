@@ -17,7 +17,7 @@ You're right.  `grep` is installed with OS X.  But, GNU grep provides `--initial
 
 ### Without `-T`
 
-    aa-dev:puppet-grep aashbacher$ grep -rn --exclude-dir=.git 'grep' .
+    $ grep -rn 'grep' .
     ./manifests/init.pp:1:# Public: Install grep from homebrew.
     ./manifests/init.pp:5:#   include grep
     ./manifests/init.pp:6:class grep {
@@ -31,7 +31,7 @@ You're right.  `grep` is installed with OS X.  But, GNU grep provides `--initial
 
 Isn't this better?  Especially when tons of files are matched _and_ when `--color=auto` is added.  Mmmm, so pretty.
 
-    aa-dev:puppet-grep aashbacher$ grep -rnT --exclude-dir=.git 'grep' .
+    $ grep -rnT 'grep' .
     ./manifests/init.pp:   1       :# Public: Install grep from homebrew.
     ./manifests/init.pp:   5       :#   include grep
     ./manifests/init.pp:   6       :class grep {
