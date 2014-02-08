@@ -4,5 +4,11 @@
 #
 #   include grep
 class grep {
-  package { 'grep': }
+  homebrew::tap { 'homebrew/dupes': } ->
+    package { 'grep':
+      ensure          => present,
+      install_options => [
+        '--default-names'
+      ]
+    }
 }
